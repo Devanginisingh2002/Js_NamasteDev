@@ -1,12 +1,4 @@
-// getName();
-// console.log(x);
-// console.log(getName);
 
-// var x = 7;
-
-// function getName(){
-//     console.log("first");
-// }
 
 // How functions work in JS
 // var x = 1;
