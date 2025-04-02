@@ -1,21 +1,9 @@
+var x = 10;
 
-
-// How functions work in JS
-// var x = 1;
-// a();
-// b();
-// console.log(x);
-
-// function a(){
-//     var x = 10;
-//     console.log(x);
-// }
-
-// function b(){
-//     var x = 100;
-//     console.log(x);
-// }
-
+function b(){
+    var c = 100;
+}
+console.log(b.c);
 
 // Shortest Program in JavaScript
 // var a = 10;
@@ -65,41 +53,41 @@
 // console.log(a);
 
 // EP: 10
-function x(){
-    var a = 7;
-    function y(){
-        console.log(a);
-    } 
-    return y;
-}
-var z = x();
-console.log(z);
-z();
+// function x(){
+//     var a = 7;
+//     function y(){
+//         console.log(a);
+//     } 
+//     return y;
+// }
+// var z = x();
+// console.log(z);
+// z();
 
-//output of the code
-function x(){
-    var a = 7;
+// //output of the code
+// function x(){
+//     var a = 7;
 
-    function y() {
-        console.log(a);
-    }
-    a=100;
-    return y;
-}
-var z = x();
-console.log(x);
-z();
+//     function y() {
+//         console.log(a);
+//     }
+//     a=100;
+//     return y;
+// }
+// var z = x();
+// console.log(x);
+// z();
 
-//2
-function z(){
-    var b = 900
-    function x(){
-        var a = 7;
-        function y(){
-            console.log(a, b)
-        }
-        y()
-    }
-    x()
-}
-z()
+// //2
+// function z(){
+//     var b = 900
+//     function x(){
+//         var a = 7;
+//         function y(){
+//             console.log(a, b)
+//         }
+//         y()
+//     }
+//     x()
+// }
+// z()

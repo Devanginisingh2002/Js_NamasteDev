@@ -1,4 +1,4 @@
-// Episode:1 -> How JS Works & Execution Context.
+"// Ep:1 -> How JS Works & Execution Context.";
 "Everything in JS happens inside an Execution Context";
 /*
 o-> Execution Context: A big container, consist MEMORY & CODE.
@@ -21,7 +21,7 @@ o-> CODE: (Also k/w as Thread of Execution) -> Code run one at a time.
 o-> JS is a Synchronous(in-sequence) single-threaded language
 */
 
-// Episode:2 -> How JS code is Executed? & Call Stack.
+"// Ep:2 -> How JS code is Executed? & Call Stack.";
 "code";
 /* var n = 2;
 function square(num) {
@@ -56,4 +56,59 @@ o-> 'callstack' also known as these following names
     + Control Stack
     + Runtime Stack
     + Machine Stack
+*/
+
+"Ep: 3 -> Hoisting in JS:";
+"We can access function variable, without even intialising it, Before invoking or calling function => memory is already allocated.";
+/*
+case 1: 
+    var x = 7;
+    function getName() {
+        console.log("Hello");
+    }
+    getName();
+    console.log(x);
+
+++---> OUTPUT: Hello, 7
+
+case 2:
+        getName();
+        console.log(x);
+        var x = 7;
+
+        function getName() {
+        console.log("Hello")
+        }
+++---> Hello, undefined
+
+case 3: 
+        getName();
+        console.log(x);
+        function getName() {
+            console.log("Hello");
+        }
+++---> Hello, error
+
+o-> These are aboves examples are the phenomena of HOISTING.
+
+o-> NOT-DEFINE(Not defined in the code) & UN-DEFINED(Intialise in the code)
+
+*/
+
+"Ep: 4 --> How function works in JS: Global Execution Context";
+/*
+var x = 1;
+a();
+b();
+console.log(x);
+
+function a(){
+    var x = 10;
+    console.log(x);
+}
+
+function b(){
+    var x = 100;
+    console.log(x);
+}
 */
