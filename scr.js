@@ -1,33 +1,3 @@
-var x = 10;
-
-function b(){
-    var c = 100;
-}
-console.log(b.c);
-
-// Shortest Program in JavaScript
-// var a = 10;
-// function check(){
-//     var x = 100;
-//     return x;
-// }
-
-// console.log(this.a);
-// console.log(window.a);
-// console.log(a);
-// console.log(check());
-
-
-// The scope chain: Ep: 7
-// function a(){
-//     c()
-//     function c(){
-//         console.log(b);
-//     }
-// }
-// var b = 10;
-// a();
-
 // let and var in JS: Ep: 8;
 // console.log(c);
 // let a = 10;
