@@ -1,13 +1,3 @@
-// let and var in JS: Ep: 8;
-// console.log(c);
-// let a = 10;
-// var b = 100;
-// const c = 909;
-
-//attach with window object
-// let a = 10;
-// console.log(a);
-// var b = 100;
 
 
 // Ep: 9

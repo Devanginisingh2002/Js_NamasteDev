@@ -1,4 +1,4 @@
-"Ep: 5: Shortest JS Program";
+"Ep: 5: Shortest JS Program"
 /* WINDOW: Global Object, It's created by JS engine in global space.
  * Created along with 'Global Execution Context' & with 'this' keyword created.
  * this-keyword: Global Object
@@ -51,6 +51,23 @@ Now, the concept SCOPE comes to the picture.
 * SCOPE: Is directly dependent on the Lexical Envt.
 * Lexical Envt: Whenever execution context is created, lexical envt. is also created.
 * Above example: 'c' fxn lexical inside a fxn and 'a' inside global scope.
-
-
+* Scope Chain: The whole chain of lexical envt, is scope chain. 
 */
+
+'EP: 8: let & const in JS, Temporal Dead Zone and ERRORS'
+/*
+ * What is TEMPORAL DEAD ZONE?
+ * It is a time let/const variable between hoisted and initalise some value to it.
+ 
+ * 'let & const Declarations are Hoisted'
+ * var: global space (Window-object)
+ * let/const: Different memory space, we cannt access them before intialisation, NOt acces to window.
+ 
+ * Re-declarations: Cannot possible in let & const. Only possible with var.
+ */
+'ERRORS: Type Error, Syntax Error, Reference Error.'
+/* Type Error: It intialise & declared together. And we cann't assign value's later on.
+ * Syntax Error: Missing syntax, duplicate Intialisation.
+ * Reference Error: JS Engine tries to find out specfic variable in memory space & cannt find out.
+ */
+
