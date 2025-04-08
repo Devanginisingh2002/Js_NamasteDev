@@ -1,17 +1,4 @@
 
-
-// Ep: 9
-// var a = 100;
-// {
-//     var a = 20;
-//     let b = 30;
-//     const c = 40;
-//     console.log(a);
-//     console.log(b);
-//     console.log(c);
-// }
-// console.log(a);
-
 // EP: 10
 // function x(){
 //     var a = 7;
