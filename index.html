@@ -1,12 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Namaste Dev</title>
-</head>
-<body>
-    <h2> Checking </h2>
-    <script src="script2.js"></script>
-</body>
-</html>
+
+static private int secondLargest(int[] arr, int n)
+{
+	if(n<2)
+	return -1;
+	int large = Integer.MIN_VALUE;
+	int second_large = Integer.MIN_VALUE;
+	int i;
+	for (i = 0; i < n; i++)
+	{
+		if (arr[i] > large)
+		{
+			second_large = large;
+			large = arr[i];
+		}
+
+		else if (arr[i] > second_large && arr[i] != large)
+		{
+			second_large = arr[i];
+		}
+	}
+	return second_large;
+}
+
