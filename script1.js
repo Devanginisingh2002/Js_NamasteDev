@@ -1,3 +1,5 @@
+'In file: Ep: 5 to Ep: 8'
+
 "Ep: 5: Shortest JS Program"
 /* WINDOW: Global Object, It's created by JS engine in global space.
  * Created along with 'Global Execution Context' & with 'this' keyword created.

@@ -1,3 +1,4 @@
+'In file: Ep: 9 & Ep: 10'
 "Ep: 9: Block Scope & Shadowing in JS";
 /*
  * { }: Block
@@ -67,55 +68,79 @@ let a = 20;
 }
 */
 
-"EP: 10: Closures in JS"
+"EP: 10: Closures in JS";
+"A fxn along with its lexical scope, bundle together forms a closure.";
+/*
 function x() {
     var a = 7;
-    function y(){
+    function y(){       // fxn 'y' forms a closure
         console.log(a);
     }
     y();
 }
 x();
 
+* FXN VARIATION'S 
+1. Assign fxn as variable:
+eg: function x(){
+    var a = function y(){
+        console.log(a)
+    }
+}
 
+2.We can pass function in calling:
+eg: function x() {
+    var a = 7;
+    y();
+} x(function y() {
+    console.log(a);
+})
 
-// EP: 10
-// function x(){
-//     var a = 7;
-//     function y(){
-//         console.log(a);
-//     } 
-//     return y;
-// }
-// var z = x();
-// console.log(z);
-// z();
+3. Return these functions out of the funciton
+eg: function x() {
+    var a = 7;
+    return function y() {
+        console.log(a)
+    }
+    x();
+}
 
-// //output of the code
-// function x(){
-//     var a = 7;
+* OUTPUT: 
+(1).
+function x() {
+    var a = 7;
+    function y() {
+        console.log(a);
+        }
+        a = 100;
+        return y;
+        }
+        var z = x();
+        console.log(z);
+        z();
+    output: fxn y() {clg(a)}, 100
+    Concept: A fxn reference to the those variable's which is 'a'.
+             A value '7' doesn't stay but the refernce to 'a' stays.
 
-//     function y() {
-//         console.log(a);
-//     }
-//     a=100;
-//     return y;
-// }
-// var z = x();
-// console.log(x);
-// z();
+(2). function z() {
+    var b = 900;
+    function x() {
+        var a = 7;
+        function y() {
+            console.log(a, b);
+        } y();
+    }x();
+}z();
+Output: 7, 900
+Concept: Here 'y' forms a closure with scope 'x' & 'z'.
 
-// //2
-// function z(){
-//     var b = 900
-//     function x(){
-//         var a = 7;
-//         function y(){
-//             console.log(a, b)
-//         }
-//         y()
-//     }
-//     x()
-// }
-// z()
+* Uses of Closure:
+1. Module Design pattern
+2. Memoize
+3. Iterators
+4. Currying
+5. Fxn like 'once'
+6. Set timeouts
+7. Maintaing state in async world.
 
+*/

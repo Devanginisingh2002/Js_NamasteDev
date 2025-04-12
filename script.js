@@ -1,5 +1,6 @@
-"// Ep:1 -> How JS Works & Execution Context.";
-"Everything in JS happens inside an Execution Context";
+'In file: Ep: 1 to Ep: 4'
+"Ep:1 -> How JS Works & Execution Context."
+"Everything in JS happens inside an Execution Context"
 /*
 o-> Execution Context: A big container, consist MEMORY & CODE.
 |-----------------------------------------|
