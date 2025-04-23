@@ -63,3 +63,11 @@
     Output: Hello X, Hello Y, Hello CallBack(5s)
 
 */
+function attachEventListener() {
+  let count = 0;
+  document.getElementById("clickMe").addEventListener("click", function xyz() {
+    console.log("Button Clicked", count++);
+  });
+}
+
+attachEventListener();
