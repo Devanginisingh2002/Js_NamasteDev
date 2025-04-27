@@ -1,6 +1,6 @@
 "In file: Ep: 11 to Ep: 14";
-"EP: 11 -> setTimeout + Closure Interview Question";
 
+"EP: 11 -> setTimeout + Closure Interview Question";
 /*
  * 1
     function x(){
@@ -27,7 +27,34 @@
     OUTPUT: first, 6, 6, ... so on: Because of closure.
     Expected:  
 */
-"EP: 12: CRAZY JS Interview -> Closure";
+"EP: 12: JS Interview Question -> Closure";
+/* 1. 
+    function outer() {
+        var a = 10;
+        function inner() {
+            console.log(a);
+        }
+        return inner;
+    }
+    outer();
+
+ * Explanation: i.  Inner fxn variable, access to outer fxn which is a.
+                ii. If we return inner, so out of the fxn. it still give's the value of a.
+
+ * 2.
+    function outer() {
+        function inner() {
+            console.log(a);
+        }    
+        let a = 10;
+        return inner;
+    }
+    outer();
+
+ * Explanation: i.  It still forms a closure.
+                ii. Output will be same.
+
+ */
 
 "EP: 13 -> First Class Function -> Anonymous Fxn";
 /* Function Statement : The way function was creating is fxn statement.
@@ -35,17 +62,16 @@
  * eg: function a(){
         console.log("a is called");
     }
+ * Anonymous Function: A fxn without name, 
+                       Doesn't have own identity.
+                       Type of fxn statement but require's name.
+                       Anon. fxn used where fxn are used as value.
 
+ * Named fxn Expression: A same as fxn expression with name fxn.
+ * First Class fxn: The ability to use fxn as value's is k/n as first class fxn.
+ *                  Passing fxn as argument
+ *                  Return out of other: First Class fxn.
 */
-// a();
-// b();
-// function a(){
-//     console.log("a is called");
-// }
-// * Function Expressions
-// var b = function b(){
-//     console.log('b called')
-// }
 
 "EP: 14 -> Callback fxns in JS";
 /*
@@ -62,60 +88,14 @@
     })
     Output: Hello X, Hello Y, Hello CallBack(5s)
 
+                 
+ * Blocking the Main Thread: JS has only one call-stack(main thread).
+ *                          If any operation block the call-stack is Blocking main thread
+ *                          
+ 
+ * Garbage Collection and Remove EventListener:  
+ *  Why do we need to remove eventListener: Because its heavy & take more memory.
+ *                              Our Program becomes slow.
+ *                              If we remove, event-listener's will be Garbage collected
+
 */
-function attachEventListener() {
-  let count = 0;
-  document.getElementById("clickMe").addEventListener("click", function xyz() {
-    console.log("Button Clicked", count++);
-  });
-}
-
-attachEventListener();
-
-
-class Solution {
-    // Function to merge the arrays.
-    public void mergeArrays(int a[], int b[]) {
-        int n = a.length;
-        int m = b.length;
-        int gap = nextGap(n + m);
-        
-        while (gap > 0) {
-            int i = 0;
-            int j = gap;
-            
-            while (j < (n + m)) {
-                // i-th element
-                int first = (i < n) ? a[i] : b[i - n];
-                // j-th element
-                int second = (j < n) ? a[j] : b[j - n];
-                
-                if (first > second) {
-                    // swap if out of order
-                    if (i < n && j < n) {
-                        int temp = a[i];
-                        a[i] = a[j];
-                        a[j] = temp;
-                    } else if (i < n && j >= n) {
-                        int temp = a[i];
-                        a[i] = b[j - n];
-                        b[j - n] = temp;
-                    } else {
-                        int temp = b[i - n];
-                        b[i - n] = b[j - n];
-                        b[j - n] = temp;
-                    }
-                }
-                i++;
-                j++;
-            }
-            gap = nextGap(gap);
-        }
-    }
-    
-    // Helper function to calculate the next gap
-    private int nextGap(int gap) {
-        if (gap <= 1) return 0;
-        return (gap / 2) + (gap % 2);
-    }
-}
