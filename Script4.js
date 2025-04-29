@@ -20,3 +20,20 @@
 
 
 
+"EP: 17 -> setTimeout (Trust Issues)"
+// eg:
+
+console.log("first")
+setTimeout(function cb() {
+    console.log("call_back");
+}, 5000);
+
+console.log("End");
+
+let startDate = new Date().getTime();
+let endDate = startDate;
+while(endDate < startDate + 10000) {
+    endDate = new Date().getTime();
+}
+
+console.log("while loop end");
