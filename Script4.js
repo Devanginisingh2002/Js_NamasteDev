@@ -51,3 +51,39 @@ const calculateArea = function(radius) {
 
 console.log(calculateArea(radius));
 
+import java.util.Arrays;
+
+class Solution {
+    public static int aggressiveCows(int[] stalls, int k) {
+        Arrays.sort(stalls);  // Sort stall positions
+        int low = 1;  // Minimum possible distance
+        int high = stalls[stalls.length - 1] - stalls[0];  // Maximum possible distance
+        int result = 0;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+
+            if (canPlaceCows(stalls, k, mid)) {
+                result = mid;
+                low = mid + 1;  // Try for a bigger minimum distance
+            } else {
+                high = mid - 1;  // Try for a smaller distance
+            }
+        }
+        return result;
+    }
+
+    private static boolean canPlaceCows(int[] stalls, int k, int minDist) {
+        int count = 1;
+        int lastPosition = stalls[0];
+
+        for (int i = 1; i < stalls.length; i++) {
+            if (stalls[i] - lastPosition >= minDist) {
+                count++;
+                lastPosition = stalls[i];
+            }
+        }
+        return count >= k;
+    }
+}
+
