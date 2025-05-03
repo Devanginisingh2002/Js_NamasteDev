@@ -87,3 +87,59 @@ class Solution {
     }
 }
 
+
+
+class Solution {
+    public static int findPages(int[] arr, int k) {
+        int n = arr.length;
+        if (k > n) return -1; // Not enough books
+
+        int low = getMax(arr);
+        int high = getSum(arr);
+        int result = -1;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (isFeasible(arr, k, mid)) {
+                result = mid;
+                high = mid - 1; // Try to minimize max pages
+            } else {
+                low = mid + 1;
+            }
+        }
+        return result;
+    }
+
+    private static boolean isFeasible(int[] arr, int k, int limit) {
+        int students = 1, pages = 0;
+
+        for (int page : arr) {
+            if (pages + page > limit) {
+                students++;
+                pages = page;
+                if (students > k) return false;
+            } else {
+                pages += page;
+            }
+        }
+        return true;
+    }
+
+    private static int getMax(int[] arr) {
+        int max = arr[0];
+        for (int num : arr) {
+            max = Math.max(max, num);
+        }
+        return max;
+    }
+
+    private static int getSum(int[] arr) {
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+        return sum;
+    }
+}
+
+
