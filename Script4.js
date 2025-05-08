@@ -188,3 +188,55 @@ class Solution {
     }
 }
 
+class Solution {
+    // Function to rotate matrix anticlockwise by 90 degrees.
+    static void rotateby90(int mat[][]) {
+        int n = mat.length;
+
+        // Step 1: Transpose the matrix
+        for(int i = 0; i < n; i++) {
+            for(int j = i + 1; j < n; j++) {
+                int temp = mat[i][j];
+                mat[i][j] = mat[j][i];
+                mat[j][i] = temp;
+            }
+        }
+
+        // Step 2: Reverse each column
+        for(int j = 0; j < n; j++) {
+            int top = 0, bottom = n - 1;
+            while(top < bottom) {
+                int temp = mat[top][j];
+                mat[top][j] = mat[bottom][j];
+                mat[bottom][j] = temp;
+                top++;
+                bottom--;
+            }
+        }
+    }
+}
+
+class Solution {
+    public static boolean searchInRowWiseSortedMatrix(int[][] mat, int x) {
+        int n = mat.length;
+        int m = mat[0].length;
+
+        for (int i = 0; i < n; i++) {
+            int low = 0, high = m - 1;
+
+            while (low <= high) {
+                int mid = low + (high - low) / 2;
+
+                if (mat[i][mid] == x) {
+                    return true;
+                } else if (mat[i][mid] < x) {
+                    low = mid + 1;
+                } else {
+                    high = mid - 1;
+                }
+            }
+        }
+
+        return false;
+    }
+}
