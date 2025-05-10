@@ -262,3 +262,192 @@ class Solution {
     }
 }
 
+//-----------
+class Solution {
+    public void setMatrixZeroes(int[][] mat) {
+        int n = mat.length;
+        int m = mat[0].length;
+        
+        // Using first row and first column as markers
+        boolean firstRowZero = false;
+        boolean firstColZero = false;
+        
+        // Check if the first row has any zeroes
+        for (int j = 0; j < m; j++) {
+            if (mat[0][j] == 0) {
+                firstRowZero = true;
+                break;
+            }
+        }
+        
+        // Check if the first column has any zeroes
+        for (int i = 0; i < n; i++) {
+            if (mat[i][0] == 0) {
+                firstColZero = true;
+                break;
+            }
+        }
+        
+        // Use first row and column as markers for rows and columns that need to be zeroed
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < m; j++) {
+                if (mat[i][j] == 0) {
+                    mat[i][0] = 0;  // Mark the row
+                    mat[0][j] = 0;  // Mark the column
+                }
+            }
+        }
+        
+        // Zero out cells based on the markers in the first row and column
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < m; j++) {
+                if (mat[i][0] == 0 || mat[0][j] == 0) {
+                    mat[i][j] = 0;
+                }
+            }
+        }
+        
+        // Zero out the first row if needed
+        if (firstRowZero) {
+            for (int j = 0; j < m; j++) {
+                mat[0][j] = 0;
+            }
+        }
+        
+        // Zero out the first column if needed
+        if (firstColZero) {
+            for (int i = 0; i < n; i++) {
+                mat[i][0] = 0;
+            }
+        }
+    }
+}
+//---------
+
+class Solution {
+    public void setMatrixZeroes(int[][] mat) {
+        int n = mat.length;
+        int m = mat[0].length;
+
+        boolean firstRow = false;
+        boolean firstCol = false;
+
+        // Check if first row has any zero
+        for (int j = 0; j < m; j++) {
+            if (mat[0][j] == 0) {
+                firstRow = true;
+                break;
+            }
+        }
+
+        // Check if first column has any zero
+        for (int i = 0; i < n; i++) {
+            if (mat[i][0] == 0) {
+                firstCol = true;
+                break;
+            }
+        }
+
+        // Use first row and column as markers
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < m; j++) {
+                if (mat[i][j] == 0) {
+                    mat[i][0] = 0;
+                    mat[0][j] = 0;
+                }
+            }
+        }
+
+        // Set matrix cells to 0 based on markers
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < m; j++) {
+                if (mat[i][0] == 0 || mat[0][j] == 0) {
+                    mat[i][j] = 0;
+                }
+            }
+        }
+
+        // Finally update first row and column if needed
+        if (firstRow) {
+            for (int j = 0; j < m; j++) {
+                mat[0][j] = 0;
+            }
+        }
+
+        if (firstCol) {
+            for (int i = 0; i < n; i++) {
+                mat[i][0] = 0;
+            }
+        }
+    }
+}
+
+////////////
+
+class Solution {
+    public void setMatrixZeroes(int[][] mat) {
+        int n = mat.length;
+        int m = mat[0].length;
+
+        boolean firstRow = false;
+        boolean firstCol = false;
+
+        // Check if first row has a zero
+        for (int j = 0; j < m; j++) {
+            if (mat[0][j] == 0) {
+                firstRow = true;
+                break;
+            }
+        }
+
+        // Check if first column has a zero
+        for (int i = 0; i < n; i++) {
+            if (mat[i][0] == 0) {
+                firstCol = true;
+                break;
+            }
+        }
+
+        // Mark rows and columns that need to be zeroed
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < m; j++) {
+                if (mat[i][j] == 0) {
+                    mat[i][0] = 0;
+                    mat[0][j] = 0;
+                }
+            }
+        }
+
+        // Set matrix cells to 0 based on markers
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < m; j++) {
+                if (mat[i][0] == 0 || mat[0][j] == 0) {
+                    mat[i][j] = 0;
+                }
+            }
+        }
+
+        // Zero the first row if needed
+        if (firstRow) {
+            for (int j = 0; j < m; j++) {
+                mat[0][j] = 0;
+            }
+        }
+
+        // Zero the first column if needed
+        if (firstCol) {
+            for (int i = 0; i < n; i++) {
+                mat[i][0] = 0;
+            }
+        }
+    }
+}
+
+
+
+
+
+🔐 Zeroing out rows and columns in a matrix when a zero is encountered—done in O(1) extra space! 💡
+Efficient in both time and space!
+#Java #DSA #MatrixManipulation #LeetCode #CodingChallenge
+
