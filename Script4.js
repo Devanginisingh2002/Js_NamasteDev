@@ -451,3 +451,24 @@ class Solution {
 Efficient in both time and space!
 #Java #DSA #MatrixManipulation #LeetCode #CodingChallenge
 
+import java.util.*;
+
+class Solution {
+    public boolean hasTwoSum(int[] arr, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        
+        for (int i = 0; i < arr.length; i++) {
+            int complement = target - arr[i];
+            if (map.containsKey(complement)) {
+                return true; // Found a valid pair
+            }
+            map.put(arr[i], i);
+        }
+        return false; // No valid pair found
+    }
+}
+
+🧠💥 Think Fast!
+Can two numbers in your array sum up to a target? 🔍
+Solve it in O(n) with a HashMap trick! 🚀
+#Java #TwoSum #CodingInterview #DSA
