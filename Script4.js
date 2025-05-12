@@ -471,4 +471,75 @@ class Solution {
 🧠💥 Think Fast!
 Can two numbers in your array sum up to a target? 🔍
 Solve it in O(n) with a HashMap trick! 🚀
-#Java #TwoSum #CodingInterview #DSA
+iii#Java #TwoSum #CodingInterview #DSA
+
+
+
+
+import java.util.*;
+
+class Solution {
+
+    int countPairs(int arr[], int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int count = 0;
+
+        for (int num : arr) {
+            int complement = target - num;
+            if (map.containsKey(complement)) {
+                count += map.get(complement);
+            }
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        return count;
+    }
+}
+import java.util.*;
+
+class Solution {
+
+    int countPairs(int arr[], int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int count = 0;
+
+        for (int num : arr) { // corrected: 'num' is the element from arr
+            int complement = target - num;
+            if (map.containsKey(complement)) {
+                count += map.get(complement);
+            }
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        return count;
+    }
+}
+
+
+import java.util.*;
+
+class Solution {
+
+    int countPairs(int arr[], int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int count = 0;
+
+        for (int num : arr) { // corrected: 'num' is the element from arr
+            int complement = target - num;
+            if (map.containsKey(complement)) {
+                count += map.get(complement);
+            }
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        return count;
+    }
+}
+
+
+
+
+
+
+
+
