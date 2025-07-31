@@ -10,7 +10,7 @@
  * It JS-Engine have to access local-storage, timer or anything from browser: -> WEb APIs (with the help of Web-api it will be available).
  * WEB-APIs: Gives an access to callstack to use these things
  * WEB-APIs as: setTimeout, DOM APIs, fetch(), local-storage, console and location.
- * 
+ *
  * Event-Loop: It continuously montior the callstack-callback-queue.
  * Microtask-Queue: Same as call-back queue, but high in priority.
  * What comes to Micro-task Queue: All the callback fxn's comes through promises & Mutation Observer (Read about this). And rest things goes on callback Queue as SetTimeout, DOM APIs, and more.
@@ -18,9 +18,7 @@
 
 "EP: 16 -> JS Engine";
 
-
-
-"EP: 17 -> setTimeout (Trust Issues)"
+"EP: 17 -> setTimeout (Trust Issues)";
 // eg:
 
 // console.log("first")
@@ -38,15 +36,38 @@
 
 // console.log("while loop end");
 
+"Ep: 18-> Higher Order Functions";
+const radius = [3, 1, 2, 4];
 
-'Ep: 18-> Higher Order Functions'
-const radius = [4, 3, 2, 1];
-const calculateArea = function(radius) {
+const area = function (radius) {
+  return Math.PI * radius * radius;
+};
+const diameter = function (radius) {
+  return 2 * radius;
+};
+
+/*
+ * logic ek function hai jo batata hai "radius ke saath kya karna hai
+ * calculate function us logic ko har radius par lagata hai
+ */
+/* 
+const calculate = function(radius, logic) {
     const output = [];
     for(let i = 0; i<radius.length; i++){
-        output.push(Math.PI * radius[i] * radius[i]);
+        output.push(logic(radius[i]));
     }
     return output;
 };
 
-console.log(calculateArea(radius));
+console.log(calculate(radius, area));
+console.log(calculate(radius, diameter));
+*/
+
+// 'Ep: 19 -> Map, Filter & Reduce'
+
+// const arr = [5, 1, 2, 3, 4, 6];
+// const output = [];
+// function isOdd(x){
+//     return x % 2 == 0;
+// }
+// push.arr();
